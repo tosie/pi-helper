@@ -54,6 +54,7 @@ localectl set-locale LANG=en_US.UTF-8
 Use `timedatectl list-timezones` to list available time zones.
 
 ```bash
+# timedatectl list-timezones
 # timedatectl set-timezone Europe/Berlin
 timedatectl set-timezone Europe/Paris
 ```
