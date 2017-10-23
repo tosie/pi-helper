@@ -1,0 +1,11 @@
+[Unit]
+Description=Sets the hostname according to the serial number
+Before=network.target
+
+[Server]
+Type=oneshot
+ExecStart=/usr/local/bin/update-hostname
+RemainAfterExit=yes
+
+[Install]
+WantedBy=network.target
