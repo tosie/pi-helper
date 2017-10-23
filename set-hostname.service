@@ -2,7 +2,7 @@
 Description=Sets the hostname according to the serial number
 Before=network.target
 
-[Server]
+[Service]
 Type=oneshot
 ExecStart=/usr/local/bin/update-hostname
 RemainAfterExit=yes
