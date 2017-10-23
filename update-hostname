@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# This script sets the hostname to a pre-defined value including the hardware serial number
+
+PREFIX="gate-"
+SERIAL=$(cat /proc/cpuinfo | grep Serial | cut -d ' ' -f 2)
+HOSTNAME=$PREFIX$SERIAL
+
+echo "Setting hostname to $HOSTNAME"
+
+hostnamectl set-hostname $HOSTNAME
