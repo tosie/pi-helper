@@ -4,7 +4,8 @@
 
 PREFIX="gate-"
 SERIAL=$(cat /proc/cpuinfo | grep Serial | cut -d ' ' -f 2)
-HOSTNAME=$PREFIX$SERIAL
+DASHED_SERIAL=$(echo "$SERIAL" | sed 's/.\{4\}/&-/g' | sed 's/-$//')
+HOSTNAME=$PREFIX$DASHED_SERIAL
 
 echo "Setting hostname to $HOSTNAME"
 
