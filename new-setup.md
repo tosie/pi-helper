@@ -98,6 +98,12 @@ systemctl enable set-hostname.service
 reboot now
 ```
 
+### Copy the public key file to the system
+
+```bash
+ssh-copy-id <hostname>
+```
+
 ### Reconnect via SSH using the new account
 
 ### Become root
