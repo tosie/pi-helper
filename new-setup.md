@@ -92,6 +92,16 @@ wget -O /etc/systemd/system/set-hostname.service https://raw.github.com/tosie/pi
 systemctl enable set-hostname.service
 ```
 
+### Install Avahi and Advertise Certain Services
+
+The service will be started after a reboot. The reboot seems to be necessary to initialize the d-bus daemon completely.
+
+```bash
+pacman -S avahi
+cp /usr/share/doc/avahi/ssh.service /etc/avahi/services/
+systemctl enable avahi-daemon
+```
+
 ### Reboot
 
 ```bash
