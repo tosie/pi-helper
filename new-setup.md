@@ -19,9 +19,9 @@ sed -i 's/#Color/Color/' /etc/pacman.conf
 pacman -Syu
 ```
 
-### Install vim, sudo, mosh, tmux, wget
+### Install vim, sudo, mosh, tmux, wget, bash-completion
 ```bash
-pacman -S vim sudo mosh tmux wget
+pacman -S vim sudo mosh tmux wget bash-completion
 ```
 
 ### Install rmate
@@ -77,6 +77,12 @@ sed -i "s/#Compress=yes/Compress=yes/" /etc/systemd/journald.conf
 sed -i "s/#RuntimeMaxUse=/RuntimeMaxUse=40M/" /etc/systemd/journald.conf
 ```
 
+### Enable systemd to make use of the hardware watchdog
+
+```bash
+sed -i "s/#RuntimeWatchdogSec=0/RuntimeWatchdogSec=10/" /etc/systemd/system.conf
+```
+
 ### Update the hostname
 
 ```bash
@@ -100,6 +106,14 @@ The service will be started after a reboot. The reboot seems to be necessary to 
 pacman -S avahi
 cp /usr/share/doc/avahi/ssh.service /etc/avahi/services/
 systemctl enable avahi-daemon
+```
+
+### Disable IPv6
+
+```bash
+echo "# Do not assign IPv6 addresses to any network interface" >> /etc/sysctl.d/40-ipv6.conf
+echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.d/40-ipv6.conf
+sed -i "s/::1	localhost.localdomain	localhost/#::1	localhost.localdomain	localhost/" /etc/hosts
 ```
 
 ### Reboot
