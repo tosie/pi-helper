@@ -59,6 +59,15 @@ Use `timedatectl list-timezones` to list available time zones.
 timedatectl set-timezone Europe/Paris
 ```
 
+### Setup NTP time synchronization
+
+```bash
+timedatectl set-ntp false
+sed -i "s/#NTP=/NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org/" /etc/systemd/timesyncd.conf
+sed -i "s/#FallbackNTP/FallbackNTP/" /etc/systemd/timesyncd.conf
+timedatectl set-ntp true
+```
+
 ### Setup a swap file
 
 ```bash
