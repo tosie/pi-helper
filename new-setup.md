@@ -122,6 +122,7 @@ systemctl enable avahi-daemon
 ```bash
 echo "# Do not assign IPv6 addresses to any network interface" >> /etc/sysctl.d/40-ipv6.conf
 echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.d/40-ipv6.conf
+echo "net.ipv6.conf.eth0.disable_ipv6 = 1" >> /etc/sysctl.d/40-ipv6.conf
 sed -i "s/::1	localhost.localdomain	localhost/#::1	localhost.localdomain	localhost/" /etc/hosts
 ```
 
