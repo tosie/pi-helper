@@ -157,6 +157,13 @@ passwd -l root
 userdel -r alarm
 ```
 
+### SSHD config
+
+```bash
+sed -i "s/PermitRootLogin yes/PermitRootLogin no/" /etc/ssh/sshd_config
+sed -i "s/#PasswordAuthentication yes/PasswordAuthentication no/" /etc/ssh/sshd_config
+```
+
 ### Check for config differences after updating the system
 
 ```bash
