@@ -32,7 +32,7 @@ chmod a+x /usr/local/bin/rmate
 
 ### Edit sudoers to include the "wheel" group without password
 ```bash
-visudo
+sed -i "s/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/" /etc/sudoers
 ```
 
 ### Create new user and add him to "wheel"
