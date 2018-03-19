@@ -65,6 +65,8 @@ timedatectl set-timezone Europe/Paris
 timedatectl set-ntp false
 sed -i "s/#NTP=/NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org/" /etc/systemd/timesyncd.conf
 sed -i "s/#FallbackNTP/FallbackNTP/" /etc/systemd/timesyncd.conf
+systemctl enable systemd-timesyncd.service
+systemctl start systemd-timesyncd.service
 timedatectl set-ntp true
 ```
 
@@ -95,7 +97,7 @@ sed -i "s/#RuntimeWatchdogSec=0/RuntimeWatchdogSec=10/" /etc/systemd/system.conf
 ### Update the hostname
 
 ```bash
-wget -O /usr/local/bin/update-hostname https://raw.github.com/tosie/pi-helper/master/update-hostname
+curl --output /usr/local/bin/update-hostname https://raw.github.com/tosie/pi-helper/master/update-hostname
 chmod a+x /usr/local/bin/update-hostname
 update-hostname
 ```
@@ -103,7 +105,7 @@ update-hostname
 ### Keep the hostname up-to-date with every reboot
 
 ```bash
-wget -O /etc/systemd/system/set-hostname.service https://raw.github.com/tosie/pi-helper/master/set-hostname.service
+curl --output /etc/systemd/system/set-hostname.service https://raw.github.com/tosie/pi-helper/master/set-hostname.service
 systemctl enable set-hostname.service
 ```
 
