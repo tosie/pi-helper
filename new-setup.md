@@ -26,7 +26,7 @@ pacman -S vim sudo mosh tmux wget bash-completion
 
 ### Install rmate
 ```bash
-wget -O /usr/local/bin/rmate https://raw.github.com/aurora/rmate/master/rmate
+curl --output /usr/local/bin/rmate https://raw.github.com/aurora/rmate/master/rmate
 chmod a+x /usr/local/bin/rmate
 ```
 
