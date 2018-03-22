@@ -26,7 +26,7 @@ pacman -S vim sudo mosh tmux wget bash-completion
 
 ### Install rmate
 ```bash
-curl --output /usr/local/bin/rmate https://raw.github.com/aurora/rmate/master/rmate
+curl -L --output /usr/local/bin/rmate https://raw.github.com/aurora/rmate/master/rmate
 chmod a+x /usr/local/bin/rmate
 ```
 
@@ -105,7 +105,7 @@ update-hostname
 ### Keep the hostname up-to-date with every reboot
 
 ```bash
-curl --output /etc/systemd/system/set-hostname.service https://raw.github.com/tosie/pi-helper/master/set-hostname.service
+curl -L --output /etc/systemd/system/set-hostname.service https://raw.github.com/tosie/pi-helper/master/set-hostname.service
 systemctl enable set-hostname.service
 ```
 
