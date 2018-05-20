@@ -97,7 +97,7 @@ sed -i "s/#RuntimeWatchdogSec=0/RuntimeWatchdogSec=10/" /etc/systemd/system.conf
 ### Update the hostname
 
 ```bash
-curl --output /usr/local/bin/update-hostname https://raw.github.com/tosie/pi-helper/master/update-hostname
+curl -L --output /usr/local/bin/update-hostname https://raw.github.com/tosie/pi-helper/master/update-hostname
 chmod a+x /usr/local/bin/update-hostname
 update-hostname
 ```
