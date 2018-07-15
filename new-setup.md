@@ -19,9 +19,9 @@ sed -i 's/#Color/Color/' /etc/pacman.conf
 pacman -Syu
 ```
 
-### Install vim, sudo, mosh, tmux, wget, bash-completion
+### Install pacman-contrib, vim, sudo, mosh, tmux, wget, bash-completion
 ```bash
-pacman -S vim sudo mosh tmux wget bash-completion
+pacman -S pacman-contrib vim sudo mosh tmux wget bash-completion
 ```
 
 ### Install rmate
