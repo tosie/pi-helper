@@ -119,6 +119,13 @@ cp /usr/share/doc/avahi/ssh.service /etc/avahi/services/
 systemctl enable avahi-daemon
 ```
 
+### Enable and Start Regular Paccache Runs
+
+```bash
+systemctl enable paccache.timer
+systemctl start paccache.timer
+```
+
 ### Disable IPv6
 
 ```bash
