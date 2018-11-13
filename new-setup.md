@@ -99,7 +99,7 @@ sed -i "s/#RuntimeWatchdogSec=0/RuntimeWatchdogSec=10/" /etc/systemd/system.conf
 ```bash
 curl -L --output /usr/local/bin/update-hostname https://raw.github.com/tosie/pi-helper/master/update-hostname
 chmod a+x /usr/local/bin/update-hostname
-update-hostname
+# update-hostname
 ```
 
 ### Keep the hostname up-to-date with every reboot
@@ -116,6 +116,7 @@ The service will be started after a reboot. The reboot seems to be necessary to 
 ```bash
 pacman -S avahi
 cp /usr/share/doc/avahi/ssh.service /etc/avahi/services/
+cp /usr/share/doc/avahi/sftp-ssh.service /etc/avahi/services/
 systemctl enable avahi-daemon
 ```
 
@@ -123,7 +124,6 @@ systemctl enable avahi-daemon
 
 ```bash
 systemctl enable paccache.timer
-systemctl start paccache.timer
 ```
 
 ### Disable IPv6
