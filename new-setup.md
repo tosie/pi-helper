@@ -14,14 +14,9 @@ su root
 sed -i 's/#Color/Color/' /etc/pacman.conf
 ```
 
-### Update system
+### Update system and install core packages
 ```bash
-pacman -Syu
-```
-
-### Install pacman-contrib, vim, sudo, mosh, tmux, wget, bash-completion
-```bash
-pacman -S pacman-contrib vim sudo mosh tmux wget bash-completion
+pacman -Syu --noconfirm pacman-contrib vim sudo mosh tmux wget bash-completion vim
 ```
 
 ### Install rmate
