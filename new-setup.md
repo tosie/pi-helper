@@ -16,7 +16,7 @@ sed -i 's/#Color/Color/' /etc/pacman.conf
 
 ### Update system and install core packages
 ```bash
-pacman -Syu --noconfirm pacman-contrib vim sudo mosh tmux wget bash-completion vim
+pacman -Syu --noconfirm pacman-contrib vim sudo mosh tmux wget bash-completion
 ```
 
 ### Install rmate
