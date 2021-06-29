@@ -83,6 +83,12 @@ sed -i "s/#Compress=yes/Compress=yes/" /etc/systemd/journald.conf
 sed -i "s/#RuntimeMaxUse=/RuntimeMaxUse=40M/" /etc/systemd/journald.conf
 ```
 
+### Enable using systemd-resolved through /etc/resolve.conf
+
+```bash
+ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+```
+
 ### Enable systemd to make use of the hardware watchdog
 
 ```bash
