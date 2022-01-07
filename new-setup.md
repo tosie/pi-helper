@@ -8,10 +8,11 @@ The default password is "root".
 su root
 ```
 
-### Add color to pacman
+### Add color to pacman and allow parallel downloads
 
 ```bash
 sed -i 's/#Color/Color/' /etc/pacman.conf
+sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 3/' /etc/pacman.conf
 ```
 
 ### Update system and install core packages
