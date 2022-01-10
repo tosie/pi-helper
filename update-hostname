@@ -7,7 +7,7 @@ SERIAL=$(cat /proc/cpuinfo | grep Serial | cut -d ' ' -f 2)
 DASHED_SERIAL=$(echo "$SERIAL" | sed 's/.\{4\}/&-/g' | sed 's/-$//')
 HOSTNAME=$PREFIX$DASHED_SERIAL
 
-OLD_HOSTNAME=`hostname -s`
+OLD_HOSTNAME=`hostnamectl hostname`
 
 if [ "$OLD_HOSTNAME" = "$HOSTNAME" ]; then
   echo "Hostname is already current, nothing to change here"
