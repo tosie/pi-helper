@@ -51,8 +51,7 @@ Use `timedatectl list-timezones` to list available time zones.
 
 ```bash
 # timedatectl list-timezones
-# timedatectl set-timezone Europe/Berlin
-timedatectl set-timezone Europe/Paris
+timedatectl set-timezone Europe/Berlin
 ```
 
 ### Setup NTP time synchronization
