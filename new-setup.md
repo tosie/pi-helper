@@ -17,7 +17,7 @@ sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 3/' /etc/pacman.conf
 
 ### Update system and install core packages
 ```bash
-pacman -Syu --noconfirm pacman-contrib vim sudo mosh tmux wget bash-completion helix git
+pacman -Syu --noconfirm pacman-contrib vim sudo mosh tmux wget bash-completion helix git zsh
 ```
 
 ### Install rmate
@@ -33,7 +33,7 @@ sed -i "s/# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: AL
 
 ### Create new user and add him to "wheel"
 ```bash
-useradd -m -G wheel -s /bin/bash username
+useradd -m -G wheel -s /bin/zsh username
 passwd username
 ```
 
