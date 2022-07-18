@@ -17,7 +17,7 @@ sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 3/' /etc/pacman.conf
 
 ### Update system and install core packages
 ```bash
-pacman -Syu --noconfirm pacman-contrib vim sudo mosh tmux wget bash-completion helix git zsh net-tools
+pacman -Syu --noconfirm pacman-contrib vim sudo mosh tmux wget bash-completion helix git zsh inetutils
 ```
 
 ### Install rmate
